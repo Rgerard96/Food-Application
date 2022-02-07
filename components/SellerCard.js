@@ -24,9 +24,7 @@ export default function SellerCard() {
         <div className=''>
           <div className='flex text-sm'>
             <StarIcon className='mr-1.5 w-5 text-yellow-500' />
-            <div>
-              <span>5.0</span>
-            </div>
+            <div>5.0</div>
           </div>
           <div className='flex cursor-pointer justify-end text-gray-500'>
             <Dropdown name='option' />
