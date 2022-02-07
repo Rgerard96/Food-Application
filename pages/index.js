@@ -4,7 +4,7 @@ import SellerCard from '../components/SellerCard';
 
 export default function Home() {
   return (
-    <div className='container mx-auto px-5'>
+    <div className='container mx-auto px-3 sm:px-5'>
       <Head>
         <title>Food Application</title>
         <link rel='icon' href='/favicon.ico' />

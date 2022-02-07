@@ -22,7 +22,7 @@ export default function Header() {
         setSlideOver={setSlideOver}
         type={type}
       />
-      <div className='container mx-auto flex items-center justify-between px-5'>
+      <div className='container mx-auto flex items-center justify-between px-3 sm:px-5'>
         <div className='flex items-center'>
           <ColorSwatchIcon className='mr-3 w-8 text-blue-500 sm:w-10' />
           <h2 className='text-xl font-bold'>Food</h2>

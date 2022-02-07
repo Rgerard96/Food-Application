@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 export default function Seller() {
   const router = useRouter();
   return (
-    <div className='container mx-auto px-5'>
+    <div className='container mx-auto px-3 sm:px-5'>
       <div
         className='mb-5 flex cursor-pointer items-center group w-max'
         onClick={() => router.back()}
