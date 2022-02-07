@@ -6,7 +6,7 @@ import Dropdown from './Dropdown';
 export default function SellerCard() {
   const router = useRouter();
   return (
-    <div className='w-full rounded-lg bg-white p-5 border'>
+    <div className='w-full rounded-lg border bg-white p-5'>
       <div className='mb-5 flex justify-between'>
         <div className='flex items-center'>
           <div
@@ -24,7 +24,9 @@ export default function SellerCard() {
         <div className=''>
           <div className='flex text-sm'>
             <StarIcon className='mr-1.5 w-5 text-yellow-500' />
-            <span>5.0</span>
+            <div>
+              <span>5.0</span>
+            </div>
           </div>
           <div className='flex cursor-pointer justify-end text-gray-500'>
             <Dropdown name='option' />
@@ -73,7 +75,7 @@ export default function SellerCard() {
           Menu bekijken
         </div> */}
         <div
-          className='cursor-pointer rounded-lg py-2 px-4 text-center border border-blue-500 text-blue-500 md:hover:bg-blue-500 md:hover:text-white transition-colors'
+          className='cursor-pointer rounded-lg border border-blue-500 py-2 px-4 text-center text-blue-500 transition-colors md:hover:bg-blue-500 md:hover:text-white'
           onClick={() => router.push('/menu/1')}
         >
           Menu bekijken
