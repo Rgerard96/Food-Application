@@ -28,7 +28,7 @@ export default function Dropdown({ name }) {
           ) : name === 'cart' ? (
             <ShoppingCartIcon className={style.cart} />
           ) : (
-            <DotsHorizontalIcon className='w-6' />
+            <DotsHorizontalIcon className='w-7 mt-1' />
           )}
           {name === 'Account' && (
             <ChevronDownIcon
