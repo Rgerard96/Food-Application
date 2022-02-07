@@ -4,7 +4,7 @@ import SellerCard from '../components/SellerCard';
 
 export default function Home() {
   return (
-    <div className='container mx-auto px-4 sm:px-5'>
+    <div className='container mx-auto px-5'>
       <Head>
         <title>Food Application</title>
         <link rel='icon' href='/favicon.ico' />
@@ -19,12 +19,7 @@ export default function Home() {
             dolores. Quibusdam eligendi animi ipsum sed deleniti saepe
             laboriosam totam similique?
           </p>
-          <input
-            type='text'
-            name=''
-            id=''
-            className='w-4/5 rounded-full py-2 px-5 ring ring-blue-500 focus:outline-none'
-          />
+          <input type="text" name="" id="" className='py-2 px-5 rounded-full w-4/5 focus:outline-none ring ring-blue-500'/>
         </div>
         <div className='w-4/6'></div>
       </div>

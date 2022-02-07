@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 export default function Seller() {
   const router = useRouter();
   return (
-    <div className='container mx-auto px-4 sm:px-5'>
+    <div className='container mx-auto px-5'>
       <div
-        className='group mb-5 flex w-max cursor-pointer items-center'
+        className='mb-5 flex cursor-pointer items-center group w-max'
         onClick={() => router.back()}
       >
         <ChevronLeftIcon className='mr-2 w-5 group-hover:text-blue-500' />
@@ -22,9 +22,9 @@ export default function Seller() {
             backgroundPosition: 'center',
           }}
         >
-          <div className='absolute -bottom-10 left-5 sm:-bottom-14'>
+          <div className='absolute -bottom-10 sm:-bottom-14 left-5'>
             <div
-              className='h-20 w-20 rounded-full sm:h-36 sm:w-36'
+              className='h-20 sm:h-36 w-20 sm:w-36 rounded-full'
               style={{
                 backgroundImage: 'url(' + '../images/person.jpg' + ')',
                 backgroundSize: 'cover',
@@ -32,7 +32,7 @@ export default function Seller() {
             ></div>
           </div>
         </div>
-        <div className='h-16 bg-white sm:h-24'></div>
+        <div className='h-16 sm:h-24 bg-white'></div>
       </div>
     </div>
   );
