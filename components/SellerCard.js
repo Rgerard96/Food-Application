@@ -28,7 +28,7 @@ export default function SellerCard() {
         </div>
         <div className='flex flex-col justify-between'>
           <div className='flex text-sm'>
-            <StarIcon className='mr-1.5 w-5 text-yellow-500' />
+            <StarIcon className='mr-1 w-5 text-yellow-500' />
             <span>5.0</span>
           </div>
           <div className='flex cursor-pointer justify-end text-gray-500'>
