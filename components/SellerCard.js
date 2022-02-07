@@ -22,7 +22,7 @@ export default function SellerCard() {
           </div>
         </div>
         <div className=''>
-          <div className='text-sm'>
+          <div className='flex text-sm'>
             <StarIcon className='mr-1.5 w-5 text-yellow-500' />
             <span>5.0</span>
           </div>
