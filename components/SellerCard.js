@@ -22,11 +22,11 @@ export default function SellerCard() {
           </div>
         </div>
         <div className=''>
-          <div className='flex text-sm'>
+          <div className='text-sm'>
             <StarIcon className='mr-1.5 w-5 text-yellow-500' />
             <span>5.0</span>
           </div>
-          <div className='flex cursor-pointer justify-end text-gray-500'>
+          <div className='cursor-pointer text-gray-500'>
             <Dropdown name='option' />
           </div>
         </div>
