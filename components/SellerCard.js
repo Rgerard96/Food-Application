@@ -11,7 +11,7 @@ import Dropdown from './Dropdown';
 export default function SellerCard() {
   const router = useRouter();
   return (
-    <div className='w-full rounded-lg bg-white p-5'>
+    <div className='w-full rounded-lg bg-white p-5 border'>
       <div className='mb-5 flex justify-between'>
         <div className='flex items-center'>
           <div
