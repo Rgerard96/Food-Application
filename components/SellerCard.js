@@ -21,7 +21,7 @@ export default function SellerCard() {
             <small className='text-xs text-gray-400'>Rotterdam, 3073</small>
           </div>
         </div>
-        <div className=''>
+        <div className='flex flex-col justify-between'>
           <div className='flex text-sm'>
             <div>
               <StarIcon className='mr-1.5 w-5 text-yellow-500' />
