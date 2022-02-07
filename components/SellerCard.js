@@ -2,7 +2,6 @@ import { StarIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useRouter } from 'next/router';
 import Dropdown from './Dropdown';
-import { RefreshIcon } from '@heroicons/react/outline';
 
 export default function SellerCard() {
   const router = useRouter();
@@ -22,9 +21,9 @@ export default function SellerCard() {
             <small className='text-xs text-gray-400'>Rotterdam, 3073</small>
           </div>
         </div>
-        <div className='flex flex-col justify-between'>
+        <div className=''>
           <div className='flex text-sm'>
-            <RefreshIcon className='mr-1.5 w-5 text-yellow-500' />
+            <StarIcon className='mr-1.5 w-5 text-yellow-500' />
             <span>5.0</span>
           </div>
           <div className='flex cursor-pointer justify-end text-gray-500'>
