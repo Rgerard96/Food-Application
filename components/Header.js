@@ -16,7 +16,7 @@ export default function Header() {
     setType(e.target.id);
   };
   return (
-    <div className='sticky top-0 z-10 mb-8 border-b bg-white py-3 shadow-md'>
+    <div className='sticky top-0 z-10 mb-8 bg-white py-3 shadow-md'>
       <SlideOver
         slideOver={slideOver}
         setSlideOver={setSlideOver}
