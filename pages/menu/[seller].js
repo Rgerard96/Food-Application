@@ -13,7 +13,7 @@ export default function Seller() {
         <ChevronLeftIcon className='mr-2 w-5 group-hover:text-blue-500' />
         <h3 className='font-bold group-hover:text-blue-500'>Terug</h3>
       </div>
-      <div className='overflow-hidden rounded-lg'>
+      <div className='mb-5 overflow-hidden rounded-lg'>
         <div
           className='relative h-32 sm:h-60'
           style={{
@@ -33,6 +33,12 @@ export default function Seller() {
           </div>
         </div>
         <div className='h-16 bg-white sm:h-24'></div>
+      </div>
+      <div
+        className='text-center cursor-pointer rounded-lg bg-blue-500 py-2 px-14 w-max text-white lg:hover:bg-blue-600'
+        onClick={() => router.push('/afrekenen')}
+      >
+        Checkout
       </div>
     </div>
   );
