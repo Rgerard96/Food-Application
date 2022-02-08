@@ -28,7 +28,7 @@ export default function Dropdown({ name }) {
           ) : name === 'cart' ? (
             <ShoppingCartIcon className={style.cart} />
           ) : (
-            <DotsHorizontalIcon className='w-7 mt-1' />
+            <DotsHorizontalIcon className='mt-1 w-7' />
           )}
           {name === 'Account' && (
             <ChevronDownIcon
@@ -48,7 +48,11 @@ export default function Dropdown({ name }) {
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-95'
       >
-        <Menu.Items className={`absolute right-0 ${name === 'option' ? 'mt-1' : 'mt-5'} w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}>
+        <Menu.Items
+          className={`absolute right-0 ${
+            name === 'option' ? 'mt-1' : 'mt-5'
+          } w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+        >
           <div className='py-1'>
             <Menu.Item>
               {({ active }) => (

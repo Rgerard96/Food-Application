@@ -75,7 +75,7 @@ export default function SellerCard() {
           Menu bekijken
         </div> */}
         <div
-          className='cursor-pointer rounded-lg border border-blue-500 py-2 px-4 text-center text-blue-500 transition-colors md:hover:bg-blue-500 md:hover:text-white'
+          className='cursor-pointer rounded-lg border border-blue-500 py-2 px-4 text-center text-blue-500 transition-colors lg:hover:bg-blue-500 lg:hover:text-white'
           onClick={() => router.push('/menu/1')}
         >
           Menu bekijken
