@@ -7,7 +7,7 @@ import SlideOver from './SlideOver';
 
 export default function Header() {
   const router = useRouter();
-  const path = router.asPath;
+  const path = router.asPath.split('/');
   const { data: session } = useSession();
   const [slideOver, setSlideOver] = useState(false);
   const [type, setType] = useState();
@@ -15,6 +15,7 @@ export default function Header() {
     setSlideOver(!slideOver);
     setType(e.target.id);
   };
+
   return (
     <div className='sticky top-0 z-10 mb-8 bg-white py-3 shadow-md'>
       <SlideOver
@@ -45,7 +46,13 @@ export default function Header() {
                 Nu verkopen
               </div>
             </div>
-            {path !== '/' && <Dropdown name='cart' />}
+            {path[1] === '' ? (
+              ''
+            ) : path[1] === 'afrekenen' ? (
+              ''
+            ) : (
+              <Dropdown name='cart' />
+            )}
           </div>
           <div className='cursor-pointer pl-5'>
             <MenuAlt4Icon

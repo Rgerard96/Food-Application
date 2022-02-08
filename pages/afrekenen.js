@@ -1,18 +1,13 @@
 import { ChevronDownIcon, ChevronLeftIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import React from 'react';
+import BackButton from '../components/BackButton';
 
 export default function afrekenen() {
   const router = useRouter();
   return (
     <div className='container mx-auto px-5'>
-      <div
-        className='group mb-5 flex w-max cursor-pointer items-center'
-        onClick={() => router.back()}
-      >
-        <ChevronLeftIcon className='mr-2 w-5 group-hover:text-blue-500' />
-        <h3 className='font-bold group-hover:text-blue-500'>Terug</h3>
-      </div>
+      <BackButton />
       <div className='flex flex-col justify-between sm:flex-row'>
         <div className='order-2 divide-y sm:order-1 md:mr-20 md:w-3/5'>
           <div className='pb-5'>
@@ -88,9 +83,9 @@ export default function afrekenen() {
             </div>
           </div>
         </div>
-        <div className='order-1 mb-5 rounded-lg border bg-white py-2 px-4 sm:order-2 sm:mb-0 md:w-2/5 relative text-gray-600 cursor-pointer'>
-            Overzicht bestelling
-            <ChevronDownIcon className='absolute top-3 right-4 w-5 text-gray-400' />
+        <div className='relative order-1 mb-5 cursor-pointer rounded-lg border bg-white py-2 px-4 text-gray-600 sm:order-2 sm:mb-0 md:w-2/5'>
+          Overzicht bestelling
+          <ChevronDownIcon className='absolute top-3 right-4 w-5 text-gray-400' />
         </div>
       </div>
     </div>

@@ -1,18 +1,13 @@
 import { ChevronLeftIcon } from '@heroicons/react/outline';
 import React from 'react';
 import { useRouter } from 'next/router';
+import BackButton from '../../components/BackButton';
 
 export default function Seller() {
   const router = useRouter();
   return (
     <div className='container mx-auto px-5'>
-      <div
-        className='group mb-5 flex w-max cursor-pointer items-center'
-        onClick={() => router.back()}
-      >
-        <ChevronLeftIcon className='mr-2 w-5 group-hover:text-blue-500' />
-        <h3 className='font-bold group-hover:text-blue-500'>Terug</h3>
-      </div>
+      <BackButton/>
       <div className='mb-5 overflow-hidden rounded-lg'>
         <div
           className='relative h-32 sm:h-60'
