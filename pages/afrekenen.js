@@ -1,8 +1,6 @@
-import { Transition } from '@headlessui/react';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import BackButton from '../components/BackButton';
 
 export default function afrekenen() {
   const router = useRouter();
@@ -15,7 +13,6 @@ export default function afrekenen() {
   }, []);
   return (
     <div className='container mx-auto px-5'>
-      <BackButton />
       <div className='flex flex-col justify-between sm:flex-row'>
         <div className='order-2 divide-y sm:order-1 md:mr-20 md:w-3/5'>
           <div className='pb-5'>
@@ -103,7 +100,7 @@ export default function afrekenen() {
             doloribus? Amet.
           </div>
           <div
-            className='relative bg-blue-500 py-2 px-4 text-white text-center'
+            className='relative bg-blue-500 py-2 px-4 text-white text-center sm:hidden'
             onClick={() => setSummary(!summary)}
           >
             Overzicht bestelling

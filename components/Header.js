@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { ColorSwatchIcon, MenuAlt4Icon } from '@heroicons/react/outline';
+import {
+  ChevronLeftIcon,
+  ColorSwatchIcon,
+  MenuAlt4Icon,
+} from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Dropdown from './Dropdown';
@@ -24,10 +28,13 @@ export default function Header() {
         type={type}
       />
       <div className='container mx-auto flex items-center justify-between px-5'>
-        <div
-          className='flex cursor-pointer items-center'
-          onClick={() => router.push('/')}
-        >
+        <div className='flex items-center'>
+          {path[1] !== '' && (
+            <ChevronLeftIcon
+              className='mr-3 mt-1 w-6 lg:hover:text-blue-500 cursor-pointer'
+              onClick={() => router.back()}
+            />
+          )}
           <ColorSwatchIcon className='mr-3 w-9 text-blue-500 sm:w-10' />
           <h2 className='text-xl font-bold'>Food</h2>
         </div>
@@ -56,7 +63,7 @@ export default function Header() {
           </div>
           <div className='cursor-pointer pl-5'>
             <MenuAlt4Icon
-              className='w-6 text-gray-500 lg:hover:text-blue-500'
+              className='w-6 lg:hover:text-blue-500'
               onClick={slideOverHandler}
               id='menu'
             />

@@ -1,13 +1,10 @@
-import { ChevronLeftIcon } from '@heroicons/react/outline';
 import React from 'react';
 import { useRouter } from 'next/router';
-import BackButton from '../../components/BackButton';
 
 export default function Seller() {
   const router = useRouter();
   return (
     <div className='container mx-auto px-5'>
-      <BackButton/>
       <div className='mb-5 overflow-hidden rounded-lg'>
         <div
           className='relative h-32 sm:h-60'

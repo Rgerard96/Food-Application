@@ -117,5 +117,5 @@ export default function Dropdown({ name }) {
 
 const style = {
   account: 'flex items-center mr-5 cursor-pointer lg:hover:text-blue-500',
-  cart: 'ml-5 w-5 cursor-pointer text-gray-500 lg:hover:text-blue-500',
+  cart: 'ml-5 w-5 cursor-pointer lg:hover:text-blue-500',
 };
