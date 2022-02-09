@@ -33,7 +33,7 @@ export default function Seller() {
         className='text-center cursor-pointer rounded-lg bg-blue-500 py-2 px-14 w-max text-white lg:hover:bg-blue-600'
         onClick={() => router.push('/afrekenen')}
       >
-        Checkout
+        Afrekenen
       </div>
     </div>
   );
