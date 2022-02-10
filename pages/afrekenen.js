@@ -1,14 +1,17 @@
 import { ChevronDownIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import CartItem from '../components/CartItem';
 
 export default function afrekenen() {
   const router = useRouter();
-  const [summary, setSummary] = useState(true);
+  const [summary, setSummary] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth < 640) {
       setSummary(false);
+    } else {
+      setSummary(true);
     }
   }, []);
   return (
@@ -93,18 +96,42 @@ export default function afrekenen() {
             </div>
           </div>
         </div>
-        <div className='transition-all duration-500 ease-in order-1 mb-5 cursor-pointer overflow-hidden rounded-lg border bg-white text-gray-600 sm:order-2 sm:mb-0 md:w-2/5'>
-          <div className={`py-2 px-4 ${summary ? 'block' : 'hidden'}`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus velit nam harum tempora, eaque odio! Fuga odio placeat
-            doloribus? Amet.
+        <div className='order-1 mb-5 cursor-pointer overflow-hidden rounded-lg border bg-white text-gray-600 sm:order-2 sm:mb-0 md:w-2/5'>
+          <div className={`${summary ? 'block' : 'hidden'}`}>
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <div className='divide-y p-5'>
+              <div className='pb-3'>
+                <div className='flex items-center justify-between mb-2'>
+                  <p >Subtotaal</p>
+                  <p className='font-semibold'>$50.00</p>
+                </div>
+                <div className='flex items-center justify-between mb-2'>
+                  <p >Delivery</p>
+                  <p className='font-semibold'>$5.00</p>
+                </div>
+                <div className='flex items-center justify-between mb-2'>
+                  <p >Taxes</p>
+                  <p className='font-semibold'>$5.00</p>
+                </div>
+              </div>
+              <div className='flex items-center justify-between pt-5'>
+                <p className='font-bold'>Totaal</p>
+                <p className='font-semibold'>$60.00</p>
+              </div>
+            </div>
           </div>
           <div
-            className='relative bg-blue-500 py-2 px-4 text-white text-center sm:hidden'
+            className='relative bg-blue-500 py-2 px-4 text-center text-white sm:hidden'
             onClick={() => setSummary(!summary)}
           >
             Overzicht bestelling
-            <ChevronDownIcon className={`transition-all duration-200 ease-in absolute top-3 right-4 w-5 text-white ${summary && 'rotate-180'}`} />
+            <ChevronDownIcon
+              className={`absolute top-3 right-4 w-5 text-white transition-all duration-200 ease-in ${
+                summary && 'rotate-180'
+              }`}
+            />
           </div>
         </div>
       </div>
