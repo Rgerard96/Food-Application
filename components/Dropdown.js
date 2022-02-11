@@ -47,9 +47,8 @@ export default function Dropdown({ name }) {
         leaveTo='transform opacity-0 scale-95'
       >
         <Menu.Items
-          className={`absolute right-0 ${
-            name === 'option' ? 'mt-1' : 'mt-5'
-          } w-max origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+          className={`${name === 'option' ? 'mt-1' : 'mt-5'} absolute
+          right-0 w-max origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
         >
           <div className='py-1'>
             <Menu.Item>

@@ -29,9 +29,10 @@ export default function SlideOver({ slideOver, setSlideOver, type }) {
             <Dialog.Overlay className='absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
           <div
-            className={`fixed inset-y-0 right-0 flex max-w-full ${
+            className={`${
               type === 'cart' ? 'pt-10' : 'pl-10'
-            }`}
+            } fixed inset-y-0 right-0 flex
+            max-w-full`}
           >
             <Transition.Child
               as={Fragment}

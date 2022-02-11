@@ -3,6 +3,31 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import CartItem from '../components/CartItem';
 
+const products = [
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    color: 'Salmon',
+    price: '€ 90.00',
+    quantity: 1,
+    imageSrc: '../images/food.jpg',
+    imageAlt:
+      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+  {
+    id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '€ 32.00',
+    quantity: 1,
+    imageSrc: '../images/food.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+];
+
 export default function afrekenen() {
   const router = useRouter();
   const [summary, setSummary] = useState(false);
@@ -98,27 +123,31 @@ export default function afrekenen() {
         </div>
         <div className='order-1 mb-5 cursor-pointer overflow-hidden rounded-lg border bg-white text-gray-600 sm:order-2 sm:mb-0 md:w-2/5'>
           <div className={`${summary ? 'block' : 'hidden'}`}>
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            <div className='flow-root p-5 border-b'>
+              <ul role='list' className='-my-6 divide-y divide-gray-200'>
+                {products.map((product) => (
+                  <CartItem product={product} />
+                ))}
+              </ul>
+            </div>
             <div className='divide-y p-5'>
               <div className='pb-3'>
-                <div className='flex items-center justify-between mb-2'>
-                  <p >Subtotaal</p>
-                  <p className='font-semibold'>$50.00</p>
+                <div className='mb-2 flex items-center justify-between'>
+                  <p>Subtotaal</p>
+                  <p className='font-semibold'>€ 50.00</p>
                 </div>
-                <div className='flex items-center justify-between mb-2'>
-                  <p >Delivery</p>
-                  <p className='font-semibold'>$5.00</p>
+                <div className='mb-2 flex items-center justify-between'>
+                  <p>Delivery</p>
+                  <p className='font-semibold'>€ 5.00</p>
                 </div>
-                <div className='flex items-center justify-between mb-2'>
-                  <p >Taxes</p>
-                  <p className='font-semibold'>$5.00</p>
+                <div className='mb-2 flex items-center justify-between'>
+                  <p>Taxes</p>
+                  <p className='font-semibold'>€ 5.00</p>
                 </div>
               </div>
               <div className='flex items-center justify-between pt-5'>
                 <p className='font-bold'>Totaal</p>
-                <p className='font-semibold'>$60.00</p>
+                <p className='font-semibold'>€ 60.00</p>
               </div>
             </div>
           </div>
@@ -128,9 +157,9 @@ export default function afrekenen() {
           >
             Overzicht bestelling
             <ChevronDownIcon
-              className={`absolute top-3 right-4 w-5 text-white transition-all duration-200 ease-in ${
-                summary && 'rotate-180'
-              }`}
+              className={`${summary && 'rotate-180'} absolute top-3 right-4 w-5
+                text-white transition-all duration-200
+              ease-in`}
             />
           </div>
         </div>

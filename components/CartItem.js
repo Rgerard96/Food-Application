@@ -1,33 +1,42 @@
-import { ChevronDownIcon, TrashIcon } from '@heroicons/react/outline';
-import React from 'react';
+import {
+  MinusCircleIcon,
+  PlusCircleIcon,
+} from '@heroicons/react/outline';
 
-export default function CartItem() {
+export default function CartItem({ product }) {
   return (
-    <div className='flex justify-between border-b p-5'>
-      <div className='flex mr-5'>
-        <div
-          className='mr-5 h-20 w-20 rounded-lg hidden sm:block'
-          style={{
-            backgroundImage: 'url(' + '../images/food.jpg' + ')',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        ></div>
-        <div className='flex flex-col justify-between'>
-          <div className='mb-2'>
-            <h4 className='font-bold'>Lorem ipsum</h4>
-            <p className='text-sm text-gray-400'>Lorem ipsum dolor sit amet.</p>
+    <>
+      <li key={product.id} className='flex py-6'>
+        <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
+          <img
+            src={product.imageSrc}
+            alt={product.imageAlt}
+            className='h-full w-full object-cover object-center'
+          />
+        </div>
+
+        <div className='ml-4 flex flex-1 flex-col'>
+          <div>
+            <h3 className='font-medium text-gray-900'>
+              <a href={product.href}>{product.name}</a>
+            </h3>
+            <p className='mt-1 text-xs text-gray-500'>{product.color}</p>
           </div>
-          <div className='font-bold text-sm'>$32.00</div>
+          <div className='flex flex-1 items-end justify-between'>
+            <p className='font-medium text-gray-900'>{product.price}</p>
+
+            <div className='flex items-center'>
+              <div className=''>
+                <MinusCircleIcon className='w-6 cursor-pointer text-blue-500' />
+              </div>
+              <div className='mx-2'>5</div>
+              <div className=''>
+                <PlusCircleIcon className='w-6 cursor-pointer text-blue-500' />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className='flex flex-col justify-between items-end'>
-        <TrashIcon className='w-5 text-gray-400' />
-        <div className='rounded-lg border py-1 px-3 flex justify-between items-center w-16 shadow text-sm'>
-          <p>5</p>
-          <ChevronDownIcon className='w-4 text-gray-400' />
-        </div>
-      </div>
-    </div>
+      </li>
+    </>
   );
 }
