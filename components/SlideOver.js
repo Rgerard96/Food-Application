@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/solid';
+import Filters from './Filters';
 
 export default function SlideOver({ slideOver, setSlideOver, type }) {
   const [open, setOpen] = useState(false);
@@ -47,29 +48,29 @@ export default function SlideOver({ slideOver, setSlideOver, type }) {
                 type === 'cart' ? 'translate-y-full' : 'translate-x-full'
               }
             >
-              <div className='relative w-screen max-w-md'>
-                <Transition.Child
-                  as={Fragment}
-                  enter='ease-in-out duration-500'
-                  enterFrom='opacity-0'
-                  enterTo='opacity-100'
-                  leave='ease-in-out duration-500'
-                  leaveFrom='opacity-100'
-                  leaveTo='opacity-0'
-                >
-                  <div className='absolute top-0 right-0 mr-5 flex pt-4 pr-2 sm:pr-4'>
-                    <button
-                      type='button'
-                      className='focus:outline-none md:hover:text-gray-600'
-                      onClick={() => setSlideOver(!slideOver)}
-                    >
-                      <span className='sr-only'>Close panel</span>
-                      <XIcon className='w-6 text-gray-500' aria-hidden='true' />
-                    </button>
+              <div className='w-screen max-w-md'>
+                <div className='flex h-full flex-col overflow-y-scroll bg-white shadow-xl'>
+                  <div className='flex-1 overflow-y-auto py-6 px-4 sm:px-6'>
+                    <div className='flex items-start justify-between'>
+                      <Dialog.Title className='text-lg font-medium text-gray-900'>
+                        Filters
+                      </Dialog.Title>
+                      <div className='ml-3 flex h-7 items-center'>
+                        <button
+                          type='button'
+                          className='-m-2 p-2 text-gray-500 focus:outline-none'
+                          onClick={() => setSlideOver(!slideOver)}
+                        >
+                          <span className='sr-only'>Close panel</span>
+                          <XIcon className='h-6 w-6' aria-hidden='true' />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className='mt-8'>
+                      <Filters />
+                    </div>
                   </div>
-                </Transition.Child>
-                <div className='flex h-full flex-col overflow-y-scroll bg-white pt-6 shadow-xl'>
-                  <div className='relative mt-7 flex flex-1 flex-col justify-between text-center'></div>
                 </div>
               </div>
             </Transition.Child>
