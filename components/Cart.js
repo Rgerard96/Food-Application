@@ -1,12 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import {
-  MinusCircleIcon,
-  PlusCircleIcon,
-  XIcon,
-} from '@heroicons/react/outline';
+import { XIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
+import CartItem from './CartItem';
 
 const products = [
   {
@@ -22,6 +19,28 @@ const products = [
   },
   {
     id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '€ 32.00',
+    quantity: 1,
+    imageSrc: '../images/food.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  {
+    id: 3,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '€ 32.00',
+    quantity: 1,
+    imageSrc: '../images/food.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  {
+    id: 4,
     name: 'Medium Stuff Satchel',
     href: '#',
     color: 'Blue',
@@ -102,41 +121,7 @@ export default function Cart({ cart, setCart }) {
                           className='-my-6 divide-y divide-gray-200'
                         >
                           {products.map((product) => (
-                            <li key={product.id} className='flex py-6'>
-                              <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
-                                <img
-                                  src={product.imageSrc}
-                                  alt={product.imageAlt}
-                                  className='h-full w-full object-cover object-center'
-                                />
-                              </div>
-
-                              <div className='ml-4 flex flex-1 flex-col'>
-                                <div>
-                                  <h3 className='font-medium text-gray-900'>
-                                    <a href={product.href}>{product.name}</a>
-                                  </h3>
-                                  <p className='mt-1 text-xs text-gray-500'>
-                                    {product.color}
-                                  </p>
-                                </div>
-                                <div className='flex flex-1 items-end justify-between'>
-                                  <p className='font-medium text-gray-900'>
-                                    {product.price}
-                                  </p>
-
-                                  <div className='flex items-center'>
-                                    <div className=''>
-                                      <MinusCircleIcon className='w-6 cursor-pointer text-blue-500' />
-                                    </div>
-                                    <div className='mx-2'>5</div>
-                                    <div className=''>
-                                      <PlusCircleIcon className='w-6 cursor-pointer text-blue-500' />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
+                            <CartItem product={product} />
                           ))}
                         </ul>
                       </div>

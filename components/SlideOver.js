@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/solid';
 import Filters from './Filters';
+import Menu from './Menu';
 
 export default function SlideOver({ slideOver, setSlideOver, type }) {
   const [open, setOpen] = useState(false);
@@ -68,7 +69,8 @@ export default function SlideOver({ slideOver, setSlideOver, type }) {
                     </div>
 
                     <div className='mt-8'>
-                      <Filters />
+                      {type === 'menu' && <Menu />}
+                      {type === 'filter' && <Filters />}
                     </div>
                   </div>
                 </div>
