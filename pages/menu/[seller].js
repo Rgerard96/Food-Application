@@ -1,10 +1,16 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 export default function Seller() {
   const router = useRouter();
   return (
-    <div className='container mx-auto px-5'>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className='container mx-auto px-5'>
       <div className='mb-5 overflow-hidden rounded-lg'>
         <div
           className='relative h-32 sm:h-60'
@@ -26,6 +32,6 @@ export default function Seller() {
         </div>
         <div className='h-16 bg-white sm:h-24'></div>
       </div>
-    </div>
+    </motion.div>
   );
 }

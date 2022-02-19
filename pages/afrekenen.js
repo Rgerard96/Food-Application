@@ -2,6 +2,7 @@ import { ChevronDownIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import CartItem from '../components/CartItem';
+import { motion } from 'framer-motion';
 
 const products = [
   {
@@ -40,7 +41,13 @@ export default function afrekenen() {
     }
   }, []);
   return (
-    <div className='container mx-auto px-5'>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className='container mx-auto px-5'
+    >
       <div className='flex flex-col justify-between sm:flex-row'>
         <div className='order-2 divide-y sm:order-1 md:mr-20 md:w-3/5'>
           <div className='pb-5'>
@@ -123,7 +130,7 @@ export default function afrekenen() {
         </div>
         <div className='order-1 mb-5 cursor-pointer overflow-hidden rounded-lg border bg-white text-gray-600 sm:order-2 sm:mb-0 md:w-2/5'>
           <div className={`${summary ? 'block' : 'hidden'}`}>
-            <div className='flow-root p-5 border-b'>
+            <div className='flow-root border-b p-5'>
               <ul role='list' className='-my-6 divide-y divide-gray-200'>
                 {products.map((product) => (
                   <CartItem product={product} />
@@ -164,6 +171,6 @@ export default function afrekenen() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

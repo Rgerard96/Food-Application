@@ -6,32 +6,6 @@ import SellerCard from '../../components/SellerCard';
 import SlideOver from '../../components/SlideOver';
 import { motion } from 'framer-motion';
 
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-    transition: { duration: 0.6, ease: easing },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 export default function Bestellen() {
   const [slideOver, setSlideOver] = useState(false);
   const [type, setType] = useState();
@@ -42,9 +16,10 @@ export default function Bestellen() {
   return (
     <motion.div
       exit={{ opacity: 0 }}
-      initial='initial'
-      animate='animate'
-      variants={stagger}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{duration: .5}}
+      className='container mx-auto px-5'
     >
       <Head>
         <title>Food Application</title>
@@ -55,16 +30,13 @@ export default function Bestellen() {
         setSlideOver={setSlideOver}
         type={type}
       />
-      <motion.div variants={fadeInUp} className='container mx-auto mb-8 px-5'>
+      <div className='mb-8'>
         <div className='h-64 w-full rounded-lg bg-blue-500'></div>
-      </motion.div>
-      <motion.div variants={fadeInUp}>
+      </div>
+      <div>
         <Search />
-      </motion.div>
-      <motion.div
-        variants={fadeInUp}
-        className='container mx-auto mb-5 flex items-center justify-between px-5'
-      >
+      </div>
+      <div className=' mb-5 flex items-center justify-between '>
         <h2 className='text-lg font-bold sm:text-xl'>
           Bestellen bij <span className='text-blue-500'>121</span> personen
         </h2>
@@ -76,11 +48,8 @@ export default function Bestellen() {
           <FilterIcon className='mr-2 w-4' />
           <span className='text-sm'>Filter</span>
         </div>
-      </motion.div>
-      <motion.div
-        variants={fadeInUp}
-        className='container mx-auto grid grid-cols-1 gap-5 px-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
-      >
+      </div>
+      <div className=' grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         <SellerCard />
         <SellerCard />
         <SellerCard />
@@ -89,7 +58,7 @@ export default function Bestellen() {
         <SellerCard />
         <SellerCard />
         <SellerCard />
-      </motion.div>
+      </div>
     </motion.div>
   );
 }
