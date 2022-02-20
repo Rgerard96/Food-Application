@@ -1,15 +1,21 @@
 import { PlusSmIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 import Cart from './Cart';
+import Modal from './Modal';
 
 export default function FoodCard() {
   const [cart, setCart] = useState(false);
+  const [modal, setModal] = useState(false);
+  const modalHandler = () => {
+    setModal(!modal);
+  };
   const cartHandler = () => {
     setCart(!cart);
   };
   return (
     <div className='relative mb-5 flex flex-row justify-between overflow-hidden rounded-lg border bg-white p-3 sm:items-center sm:justify-start'>
       <Cart cart={cart} setCart={setCart} />
+      <Modal modal={modal} setModal={setModal} cartHandler={cartHandler} />
       <div
         className='sm:min-h-36 2xl:min-h-48 order-2 -m-3 h-20 w-20 flex-none rounded-bl-lg bg-cover bg-center bg-no-repeat sm:order-none sm:-m-0 sm:mr-8 sm:w-36 sm:rounded-lg 2xl:w-48'
         style={{
@@ -31,7 +37,7 @@ export default function FoodCard() {
       </div>
       <div
         className='absolute bottom-0 right-0 flex w-20 cursor-pointer items-center justify-center rounded-tl-lg bg-blue-500 py-2 sm:hover:bg-blue-600'
-        onClick={cartHandler}
+        onClick={modalHandler}
       >
         <PlusSmIcon className='w-6 text-white' />
       </div>
