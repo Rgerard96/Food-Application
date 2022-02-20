@@ -11,7 +11,7 @@ export default function FoodCard() {
     <div className='relative mb-5 flex flex-row justify-between overflow-hidden rounded-lg border bg-white p-3 sm:items-center sm:justify-start'>
       <Cart cart={cart} setCart={setCart} />
       <div
-        className='sm:min-h-36 2xl:min-h-48 order-2 -m-3 h-20 w-20 flex-none rounded-lg bg-cover bg-center bg-no-repeat sm:order-none sm:-m-0 sm:mr-8 sm:w-36 2xl:w-48'
+        className='sm:min-h-36 2xl:min-h-48 order-2 -m-3 h-20 w-20 flex-none rounded-bl-lg bg-cover bg-center bg-no-repeat sm:order-none sm:-m-0 sm:mr-8 sm:w-36 sm:rounded-lg 2xl:w-48'
         style={{
           backgroundImage: 'url(' + '../images/food.jpg' + ')',
         }}
@@ -27,7 +27,7 @@ export default function FoodCard() {
         </p>
       </div>
       <div className='absolute left-0 bottom-0 p-3 sm:left-auto sm:bottom-auto sm:top-0 sm:right-0 '>
-        <p className='font-semibold 2xl:text-lg'>€ 17.50</p>
+        <p className='font-bold 2xl:text-lg'>€ 17.50</p>
       </div>
       <div
         className='absolute bottom-0 right-0 flex w-20 cursor-pointer items-center justify-center rounded-tl-lg bg-blue-500 py-2 sm:hover:bg-blue-600'
