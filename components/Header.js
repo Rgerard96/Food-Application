@@ -22,7 +22,7 @@ export default function Header() {
     setSlideOver(!slideOver);
     setType(e.target.id);
   };
-  const cartHandler = (e) => {
+  const cartHandler = () => {
     setCart(!cart);
   };
 

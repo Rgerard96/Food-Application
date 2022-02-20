@@ -5,8 +5,10 @@ import Dropdown from './Dropdown';
 
 export default function SellerCard() {
   const router = useRouter();
+
   return (
     <div className='w-full rounded-lg border bg-white p-5'>
+      <Cart cart={cart} setCart={setCart} />
       <div className='mb-5 flex justify-between'>
         <div className='flex items-center'>
           <div

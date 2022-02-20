@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+import FoodCard from '../../components/FoodCard';
 
 export default function Seller() {
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function Seller() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className='container mx-auto px-5'>
-      <div className='mb-5 overflow-hidden rounded-lg'>
+      <div className='mb-5 overflow-hidden rounded-lg border'>
         <div
           className='relative h-32 sm:h-60'
           style={{
@@ -31,6 +32,14 @@ export default function Seller() {
           </div>
         </div>
         <div className='h-16 bg-white sm:h-24'></div>
+      </div>
+      <div>
+        <FoodCard/>
+        <FoodCard/>
+        <FoodCard/>
+        <FoodCard/>
+        <FoodCard/>
+        <FoodCard/>
       </div>
     </motion.div>
   );
